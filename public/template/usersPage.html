@@ -1,0 +1,25 @@
+<div ng-show="usersPageBlock">
+    <div class="container-userspage clearfix">
+        <div class="users-navigation">
+            <h3>Профіль користувача</h3>
+        </div>
+        <div class="users-page">
+            <div class="users-page-photo">
+                <img src="../img/24432041.jpg" alt="" width="200px" height="200px">
+
+            </div>
+            <div class="users-page-information">
+                <h3>Ім'я і Прізвище користувача
+                {{nameUserTable}}</h3>
+                <p>Логін</p>
+                <p>ел.пошта</p>
+                <p>дата народження</p>
+            </div>
+            <div class="users-page-navigation">
+                <input type="button" value="Змінити фото">
+                <input type="button" value="Редагувати профіль" ng-click="cngUsersPage()">
+                <input type="button" value="Вийти">
+            </div>
+        </div>
+    </div>
+</div>

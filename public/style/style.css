@@ -1,0 +1,635 @@
+html,
+body {
+    min-width: 1122px;
+    min-height: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #343232;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+    min-height: 70px;
+}
+
+/*стилізація навігації*/
+
+.main-header {
+    margin-bottom: 60px;
+    background-color: black;
+}
+
+.menu-container {
+    width: 100%;
+    min-height: 70px;
+    float: left;
+}
+
+.navigation {
+    margin: 0;
+    float: left;
+    width: 800px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #C9C699;
+}
+
+.title {
+    width: 85px;
+    display: inline-block;
+}
+
+.navigation span {
+    font-size: 40px;
+    font-weight: 800;
+    margin-right: 35px;
+}
+
+.navigation ul {
+    width: 695px;
+}
+
+.navigation ul li {
+    display: inline-block;
+}
+
+.navigation a {
+    margin: 0 20px;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #C9C699;
+}
+
+.navigation a:hover {
+    border-bottom: 3px solid #C9C699;
+}
+
+.user-block {
+    float: right;
+    width: 100px;
+    padding-top: 33px;
+    text-align: center;
+}
+
+.user-block a {
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #C9C699;
+}
+
+.user-block a:hover {
+    border-bottom: 3px solid #C9C699;
+}
+
+/*стилізація тіла сторінки*/
+
+/*Головна сторінка*/
+
+.main-container {
+    width: 100%;
+    background-color: white;
+    min-height: 300px;
+    margin-bottom: 200px;
+}
+
+.main-page {
+    float: left;
+    padding: 40px 70px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.main-page h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.main-page-text-block {
+    display: block;
+    margin-top: 150px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.main-page-text-block a {
+    color: #6A6A6A;
+}
+
+.main-page-text-block a:hover {
+    color: blue;
+}
+
+/*Сторінка контактів*/
+
+.contact-page {
+    float: left;
+    padding: 40px 70px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.contact-page-text-block {
+    font-weight: 700;
+}
+
+.contact-page-text-block h1 {
+    text-align: left;
+}
+
+.contact-block-left {
+    float: left;
+    width: 337px;
+}
+
+.contact-block-right {
+    float: right;
+    width: 337px;
+}
+
+/*сторінка тренажерів*/
+
+/*каталог*/
+
+.simulators-page {
+    margin: 70px;
+}
+
+.simulators-page h2 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    padding-top: 15px;
+}
+
+
+.simulators-catalog-items {
+    width: 290px;
+    min-height: 400px;
+    border: 1px solid black;
+    box-shadow: 0 5px 32px 2px rgba(0, 0, 0, .17);
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsla(0, 0%, 90%, .97);
+}
+
+.simulators-items-name {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.simulators-items-name a {
+    padding-left: 15px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.simulators-items-name a:hover {
+    color: blue;
+}
+
+.simulators-items-details {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    width: 70%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+
+.simulators-items-details a {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    padding-left: 30%;
+}
+
+.simulators-items-details:hover {
+    background-color: #DAA520;
+    border: 2px solid #DAA520;
+}
+
+.simulators-items-details:hover a {
+    color: white;
+}
+
+.add-simulators {
+    margin-bottom: 15px;
+}
+
+.add-simulators input {
+    background-color: black;
+    border: 0px solid black;
+    color: white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 7px;
+}
+
+.add-simulators input:hover {
+    background-color: #DAA520;
+}
+
+.change-delete-simulators {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.change-delete-simulators input {
+    background-color: black;
+    border: 0px solid black;
+    color: white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 7px;
+    width: 100px;
+}
+
+.change-delete-simulators input:hover {
+    background-color: #DAA520;
+}
+
+/*сторінка деталів*/
+
+.details-page {
+    float: left;
+    padding: 40px 70px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.details-page img {
+    padding-left: 17.5%;
+}
+
+.details {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/*логін регестрація*/
+
+.login-page {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.login-page h1 {
+    font-size: 40px;
+}
+
+.login-page span {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.login-password {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.login-password input {
+    display: block;
+    border: 2px solid black;
+    margin-bottom: 12px;
+    width: 420px;
+    height: 30px;
+    font-weight: 700;
+}
+
+.login-field {
+    background: url("../img/sprites.png") no-repeat;
+    background-position: 6px -898px;
+    padding-left: 30px;
+    font-weight: 700;
+}
+
+.password-field {
+    background: url("../img/sprites.png") no-repeat;
+    background-position: 6px -273px;
+    padding-left: 30px;
+}
+
+.remind-forget {
+    width: 100%;
+    font-weight: 700;
+}
+
+.remind {
+    display: inline-block;
+    float: left;
+}
+
+.forget {
+    display: inline-block;
+    float: right;
+}
+
+.forget a {
+    color: black;
+}
+
+.enter-register-block {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.enter-register-block a {
+    display: block;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.enter-register-block input {
+    display: block;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: 0px solid white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.enter-register-block input:hover {
+    background-color: #DAA520;
+}
+
+.container-login {
+    width: 450px;
+    margin: 0 auto;
+    padding: 0 10px;
+    min-height: 70px;
+}
+
+/*регестрація*/
+
+.register-page {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.register-page h1 {
+    font-size: 40px;
+}
+
+.register-inputs {
+    display: block;
+}
+
+.register-inputs input {
+    border: 2px solid black;
+    margin-bottom: 12px;
+    width: 435px;
+    height: 30px;
+    font-weight: 700;
+    padding-left: 15px;
+}
+
+button {
+    width: 100%;
+    margin-bottom: 17px;
+    background-color: black;
+    color: white;
+    border: 0px solid white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/*сторінка користувача*/
+
+.container-userspage {
+    float: left;
+    padding: 5px 30px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    width: 100%;
+}
+
+.users-navigation {
+    width: 90%;
+    float: left;
+}
+
+.users-navigation h3 {
+    float: left;
+}
+
+.users-page-photo {
+    float: left;
+    display: block;
+    width: 200px;
+}
+
+.users-page-information {
+    float: left;
+    margin-left: 50px;
+}
+
+.users-page-information p {
+    font-weight: bold;
+}
+
+.users-page-navigation {
+    float: right;
+    display: block;
+    margin: 20px 50px;
+}
+
+.users-page-navigation input {
+    display: block;
+}
+
+.users-page-navigation input:nth-child(1) {
+    
+}
+
+.users-page-navigation input:nth-child(2) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.users-page-navigation input:nth-child(3) {
+    margin-top: 100px;
+    float: right;
+}
+
+/*Слайдер*/
+
+#block-for-slider {
+    width: 100%;
+    margin: 0 auto;
+    /*margin-top: 100px;*/
+}
+
+#viewport {
+    width: 100%;
+    display: table;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#slidewrapper {
+    position: relative;
+    width: calc(100% * 4);
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+#slidewrapper ul,
+#slidewrapper li {
+    margin: 0;
+    padding: 0;
+}
+
+#slidewrapper li {
+    width: calc(100%/4);
+    list-style: none;
+    display: inline;
+    float: left;
+}
+
+.slide-img {
+    width: 100%;
+}
+
+#prev-btn,
+#next-btn {
+    /*position: absolute;*/
+    display: inline-block;
+    margin-top: 25px;
+    width: 140px;
+    height: 40px;
+    background-color: black;
+    float: left;
+    /*top: calc(120% - 25px);*/
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    cursor: pointer;
+    background-color: darkorange;
+}
+
+#prev-btn {
+    margin-right: 20px;
+}
+
+#nav-btns {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.slide-nav-btn {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 3px;
+}
+
+#prev-next-btns {
+    text-align: center;
+}
+
+.slide-nav-btn:hover {
+    cursor: pointer;
+}
+
+#slidewrapper li:nth-child(3),
+#slidewrapper li:nth-child(4) {
+    display: none;
+}
+
+/*Футер*/
+
+.main-footer {
+    height: 120px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    align-items: center;
+    margin-top: 70px;
+    background: url("../img/footer-background.jpg") repeat;
+    background-position: 0px 0px;
+    background-size: auto;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: white;
+    font-weight: 700;
+}
+
+.footer-contacts {
+    float: left;
+    display: inline-block;
+    margin-right: 170px;
+    margin-top: 20px;
+}
+
+.footer-contacts a {
+    color: white;
+}
+
+.footer-social {
+    float: left;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.social-btn {
+    width: 41px;
+    height: 41px;
+    background: url("../img/favicon.ico") no-repeat;
+}
+
+
+.footer-copyright {
+    float: right;
+    display: inline-block;
+    margin-top: 30px;
+
+}
