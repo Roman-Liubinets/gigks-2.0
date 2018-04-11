@@ -94,7 +94,7 @@ app.post('/login-reg', function (req, res) {
 	connection.query('SELECT * FROM users  WHERE login = ?', req.body.login, function (err, rows) {
         if (err) throw err;
         if (rows[0] == undefined) {
-            connection.query('INSERT INTO users SET login = ? , password = ?', [req.body.login, req.body.password],
+            connection.query('INSERT INTO users SET login = ? , password = ? , status = ?', [req.body.login, req.body.password, req.body.status],
                 function (err, result) {
                     if (err) throw err;
                     console.log('user added to database with id: ' + result.insertId);

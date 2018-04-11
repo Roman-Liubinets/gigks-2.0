@@ -199,6 +199,8 @@ app.directive("loginBlock", function () {
                                     });
                         } else {
                             $scope.user = response.data;
+                            $("#login").css({"border": "2px solid red"});
+                            $("#errorMessage").css({"color": "red"});
                         };
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
@@ -263,6 +265,7 @@ app.directive("loginBlock", function () {
                     password: $scope.passwordReg,
                     name: $scope.nameReg,
                     sname: $scope.snameReg,
+                    status: "false",
                     bDay: $scope.bdayReg,
                     email: $scope.emailReg
                 };

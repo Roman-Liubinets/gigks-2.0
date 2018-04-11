@@ -6,6 +6,7 @@
                 <span>Введіть логін і пароль для входу в ваш кабінет користувача:</span>
                 <div class="login-password">
                     <input type="text" name="login" id="login" placeholder="Введіть логін" class="login-field" ng-model="login">
+                    <div id="errorMessage">{{user}}</div>
                     <input type="password" name="password" placeholder="Введіть пароль" id="password" class="password-field" ng-model="password">
                 </div>
                 <div class="remind-forget">
