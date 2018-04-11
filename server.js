@@ -89,6 +89,29 @@ app.post('/login-prof', function (req, res) {
     });
 });
 
+//Реєстрація
+app.post('/login-reg', function (req, res) {
+	connection.query('SELECT * FROM users  WHERE login = ?', req.body.login, function (err, rows) {
+        if (err) throw err;
+        if (rows[0] == undefined) {
+            connection.query('INSERT INTO users SET login = ? , password = ?', [req.body.login, req.body.password],
+                function (err, result) {
+                    if (err) throw err;
+                    console.log('user added to database with id: ' + result.insertId);
+                    connection.query('INSERT INTO userpage SET name = ? , sname = ? , bDay = ? , email = ? , users_id = ?', [req.body.name, req.body.sname, req.body.bDay, req.body.email, result.insertId],
+                        function (err, result2) {
+                            if (err) throw err;
+                            console.log('userpage added to database with id: ' + result2.insertId);
+                            res.status(200).send(req.body.login + " created");
+                        }
+                    );
+                }
+            );
+        } else {
+            res.status(200).send("pls choose another login");
+        }
+    })
+});
 
 //Запус сервера
 app.listen(PORT, function (err){

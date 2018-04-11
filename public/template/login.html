@@ -29,14 +29,14 @@
             <div class="register-page">
                 <h1>Регистрація користувача</h1>
                 <div class="register-inputs">
-                    <input type="text" name="loginReg" id="loginReg" placeholder="Введіть логін">
-                    <input type="password" name="passwordReg" id="passwordReg" placeholder="Введіть пароль">
-                    <input type="text" name="emailReg" id="emailReg" placeholder="Введіть вашу ел.пошту">
-                    <input type="text" name="nameReg" id="nameReg" placeholder="Введіть ваше ім'я">
-                    <input type="text" name="surnameReg" id="surnameReg" placeholder="Введіть ваше прізвище">
-                    <input type="text" name="dateReg" id="dateReg" placeholder="Введіть вашу дату народження">
+                    <input type="text" name="loginReg" id="loginReg" placeholder="Введіть логін" ng-model="loginReg">
+                    <input type="password" name="passwordReg" id="passwordReg" placeholder="Введіть пароль" ng-model="passwordReg">
+                    <input type="text" name="emailReg" id="emailReg" placeholder="Введіть вашу ел.пошту" ng-model="emailReg">
+                    <input type="text" name="nameReg" id="nameReg" placeholder="Введіть ваше ім'я" ng-model="nameReg">
+                    <input type="text" name="surnameReg" id="surnameReg" placeholder="Введіть ваше прізвище" ng-model="snameReg">
+                    <input type="text" name="dateReg" id="dateReg" placeholder="Введіть вашу дату народження" ng-model="bdayReg">
                 </div>
-                <button>Зареєструватися</button>
+                <button ng-click="registerAccount()">Зареєструватися</button>
             </div>
         </div>
     </div>

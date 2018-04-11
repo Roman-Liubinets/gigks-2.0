@@ -158,7 +158,7 @@ app.directive("loginBlock", function () {
             $scope.loginBlock = true;
             $scope.usersPageBlock = false;
             $scope.registerBlock = false;
-            
+
             $scope.changeToRegister = function () {
                 $scope.loginBlock = false;
                 $scope.registerBlock = true;
@@ -237,7 +237,7 @@ app.directive("loginBlock", function () {
                     $scope.enterLogin = false;
                 }
             };
-            
+
             //Розлогінитись
             $scope.logOut = function () {
                 let logoutObj = {
@@ -253,11 +253,31 @@ app.directive("loginBlock", function () {
                 $scope.loginBlock = true;
                 localStorage.userName = "default";
                 $scope.usersPageBlock = false;
-//                $scope.login = "";
                 $scope.password = "";
             };
 
-        
+            //Реєстрація
+            $scope.registerAccount = function () {
+                let registerObj = {
+                    login: $scope.loginReg,
+                    password: $scope.passwordReg,
+                    name: $scope.nameReg,
+                    sname: $scope.snameReg,
+                    bDay: $scope.bdayReg,
+                    email: $scope.emailReg
+                };
+                $http.post('http://localhost:8000/login-reg', registerObj)
+                    .then(function successCallback(response) {
+                        console.log(response.data);
+                    }, function errorCallback(response) {
+                        console.log("Error!!!" + response.err);
+                    });
+                $scope.registerBlock = false;
+                $scope.loginBlock = true;
+                $scope.usersPageBlock = false;
+            };
+
+
         }
     }
 });
