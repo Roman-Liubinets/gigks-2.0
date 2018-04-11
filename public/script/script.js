@@ -31,7 +31,7 @@ app.directive("headerBlock", function () {
             $scope.contact = false;
             $scope.simulators = false;
             $scope.details = false;
-            $scope.login = false;
+            $scope.loginPage = false;
 
             $scope.menuNavBtn = [{
                 name: "Головна",
@@ -41,7 +41,7 @@ app.directive("headerBlock", function () {
                     $scope.contact = false;
                     $scope.simulators = false;
                     $scope.details = false;
-                    $scope.login = false;
+                    $scope.loginPage = false;
                 }
             }, {
                 name: "Відео",
@@ -51,7 +51,7 @@ app.directive("headerBlock", function () {
                     $scope.contact = false;
                     $scope.simulators = false;
                     $scope.details = false;
-                    $scope.login = false;
+                    $scope.loginPage = false;
                 }
             }, {
                 name: "Контакти",
@@ -61,7 +61,7 @@ app.directive("headerBlock", function () {
                     $scope.contact = true;
                     $scope.simulators = false;
                     $scope.details = false;
-                    $scope.login = false;
+                    $scope.loginPage = false;
                 }
             }, {
                 name: "Тренажери",
@@ -71,7 +71,7 @@ app.directive("headerBlock", function () {
                     $scope.contact = false;
                     $scope.simulators = true;
                     $scope.details = false;
-                    $scope.login = false;
+                    $scope.loginPage = false;
                 }
             }];
 
@@ -81,7 +81,8 @@ app.directive("headerBlock", function () {
                 $scope.contact = false;
                 $scope.simulators = false;
                 $scope.details = false;
-                $scope.login = true;
+                $scope.loginPage = true;
+                $scope.registerBlock = false;
             }
 
 
@@ -134,7 +135,7 @@ app.directive("catalogBlock", function () {
                 $scope.video = false;
                 $scope.contact = false;
                 $scope.simulators = false;
-                $scope.userBlock = false;
+                $scope.loginPage = false;
                 $scope.details = true;
             }
         }
@@ -156,6 +157,7 @@ app.directive("loginBlock", function () {
         controller: function ($scope, $http, ngDialog) {
             $scope.loginBlock = true;
             $scope.usersPageBlock = false;
+            $scope.registerBlock = false;
             
             $scope.changeToRegister = function () {
                 $scope.loginBlock = false;
@@ -173,6 +175,7 @@ app.directive("loginBlock", function () {
                     .then(function successCallback(response) {
                         if (response.data == "welcome") {
                             $scope.loginBlock = false;
+                            $scope.registerBlock = false;
                             localStorage.userName = $scope.login;
 
                             //загрузка профілю користувача
@@ -208,6 +211,7 @@ app.directive("loginBlock", function () {
             } else {
                 if (localStorage.userName != "default") {
                     $scope.loginBlock = false;
+                    $scope.registerBlock = false;
                     $scope.usersPageBlock = true;
                     $scope.user = "";
                     //загрузка профілю користувача
@@ -229,9 +233,28 @@ app.directive("loginBlock", function () {
                             console.log("Error!!!" + response.err);
                         });
                 } else {
-                    $scope.newUser = true;
+                    $scope.registerBlock = true;
                     $scope.enterLogin = false;
                 }
+            };
+            
+            //Розлогінитись
+            $scope.logOut = function () {
+                let logoutObj = {
+                    login: localStorage.userName
+                };
+                $http.post('http://localhost:8000/logout', logoutObj)
+                    .then(function successCallback(response) {
+                        console.log("Good by!")
+                    }, function errorCallback(response) {
+                        console.log("Error!!!" + response.err);
+                    });
+                $scope.registerBlock = false;
+                $scope.loginBlock = true;
+                localStorage.userName = "default";
+                $scope.usersPageBlock = false;
+//                $scope.login = "";
+                $scope.password = "";
             };
 
         

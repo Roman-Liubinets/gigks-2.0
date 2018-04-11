@@ -60,6 +60,16 @@ app.post('/login-auth', function (req, res) {
     });
 });
 
+//Розлогінитись
+app.post('/logout', function (req, res) {
+    connection.query('UPDATE users SET status = "false" WHERE login = ?', req.body.login,
+        function (err) {
+            if (err) throw err;
+        }
+    );
+    res.sendStatus(200);
+});
+
 //Профіль користувача
 app.post('/login-prof', function (req, res) {
     connection.query('SELECT * FROM users  WHERE login = ?', req.body.login, function (err, rows) {
