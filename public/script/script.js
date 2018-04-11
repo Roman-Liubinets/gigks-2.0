@@ -156,6 +156,12 @@ app.directive("loginBlock", function () {
         controller: function ($scope, $http, ngDialog) {
             $scope.loginBlock = true;
             $scope.usersPageBlock = false;
+            
+            $scope.changeToRegister = function () {
+                $scope.loginBlock = false;
+                $scope.registerBlock = true;
+            };
+
             //Авторизація
             $scope.check = function () {
                 let loginObj = {
@@ -168,6 +174,7 @@ app.directive("loginBlock", function () {
                         if (response.data == "welcome") {
                             $scope.loginBlock = false;
                             localStorage.userName = $scope.login;
+
                             //загрузка профілю користувача
                             let loginObj = {
                                 login: localStorage.userName
@@ -186,7 +193,6 @@ app.directive("loginBlock", function () {
                                     },
                                     function errorCallback(response) {
                                         console.log("Error!!!" + response.err);
-
                                     });
                         } else {
                             $scope.user = response.data;
@@ -196,10 +202,39 @@ app.directive("loginBlock", function () {
                     });
             };
 
-            $scope.changeToRegister = function () {
-                $scope.loginBlock = false;
-                $scope.registerBlock = true;
-            }
+            //Загрузка авторизованого юзера (якщо є)
+            if (localStorage.userName == undefined) {
+                localStorage.userName = "default";
+            } else {
+                if (localStorage.userName != "default") {
+                    $scope.loginBlock = false;
+                    $scope.usersPageBlock = true;
+                    $scope.user = "";
+                    //загрузка профілю користувача
+                    let loginObj = {
+                        login: localStorage.userName
+                    }
+                    $http.post('http://localhost:8000/login-prof', loginObj)
+                        .then(function successCallback(response) {
+                            if (response.data != "Profile is undefined!") {
+                                $scope.nameUserTable = response.data[0].name;
+                                $scope.snameUserTable = response.data[0].sname;
+                                $scope.bdateUserTable = response.data[0].bDay;
+                                $scope.aboutUserTable = response.data[0].email;
+                                $scope.usersPageBlock = true;
+                            } else {
+                                alert(response.data);
+                            }
+                        }, function errorCallback(response) {
+                            console.log("Error!!!" + response.err);
+                        });
+                } else {
+                    $scope.newUser = true;
+                    $scope.enterLogin = false;
+                }
+            };
+
+        
         }
     }
 });
